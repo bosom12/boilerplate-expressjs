@@ -1,0 +1,146 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A discription of what your project is up to",
+    "version": "1.0.0",
+    "title": "Title of your project",
+    "contact": {
+      "email": "daniel.adek.k@gmail.com"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Get Started"
+    },
+    {
+      "name": "User"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Get Started"
+        ],
+        "summary": "Test endpoint",
+        "description": "Test application to confirm it is up and running",
+        "operationId": "FistEndpoint",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Response"
+          },
+          "400": {
+            "description": "Failure Response"
+          }
+        }
+      }
+    },
+    "/user/register": {
+      "post": {
+        "tags": [ "User" ],
+        "summary": "Create account",
+        "description":"Application endpoint will save user data",
+        "operationId": "registerUser",
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "in": "body",
+            "name":"body",
+            "description": "User object that needs to be added to user table",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/register"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Response"
+          },
+          "400": {
+            "description":"Failure Response"
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [ "User" ],
+        "summary": "Authenticate account",
+        "description":"Application endpoint will authenticate user data",
+        "operationId": "authenticateUser",
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "in": "body",
+            "name":"body",
+            "description": "User object that should be authenticated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/register"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Response"
+          },
+          "400": {
+            "description":"Failure Response"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "register": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "youremail@mail.com"
+        },
+        "phone": {
+          "type": "string",
+          "example": "+2348182089681"
+        },
+        "firstName": {
+          "type": "string",
+          "example": "Daniel"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Adekunle"
+        },
+        "password": {
+          "type": "string",
+          "example": "password"
+        }
+      }
+    },
+    "login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "youremail@email.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "password"
+        }
+      }
+    }
+  }
+}

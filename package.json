@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate-expressjs",
+  "version": "1.0.0",
+  "description": "A boilerplate for expressJs application",
+  "main": "app.js",
+  "repository": "https://github.com/bosom12/boilerplate-expressjs.git",
+  "author": "DanielAdek <maildaniel.me1@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "babel-node app.js",
+    "start:dev": "nodemon --exec babel-node app.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsend": "^1.1.0",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
